@@ -1,0 +1,119 @@
+%!PS-Adobe-3.0 EPS-3.0
+%%BoundingBox: 0 0 400 240
+%%EndComments
+%%EndProlog
+
+%%BeginDocument
+
+% multiplier for all lengths
+/mulscale { 8 mul } def
+
+% colours
+/Frac { 255.0 div } def
+/RoyalBlue { 1 Frac   33 Frac  105 Frac } def
+/Red       { 200 Frac 16 Frac   46 Frac } def
+/White     { 255 Frac 255 Frac 255 Frac } def 
+
+% constants
+/FlagHeight { 30 mulscale } def
+/FlagWidth  { 50 mulscale } def
+/six        { 6 mulscale } def
+/two        { 2 mulscale } def
+/three      { 3 mulscale } def
+/ten        { 10 mulscale } def
+/one        { 1 mulscale } def
+/half       { 0.5 mulscale } def
+/Angle31    { FlagHeight FlagWidth atan } def
+/FlagDiag   { FlagHeight FlagHeight mul
+	      FlagWidth FlagWidth mul add sqrt } def
+/FlagDiag2  { FlagDiag 2 div } def
+
+gsave
+0 0 FlagWidth FlagHeight rectclip
+
+
+
+% Fill with the backgound colour
+/Background {
+    newpath
+    0 0 moveto
+    0 FlagHeight lineto
+    FlagWidth FlagHeight lineto
+    FlagWidth 0 lineto closepath RoyalBlue setrgbcolor  fill } def
+
+/drawline { % def
+  % colour strokewidth length offset 0 offset rotateangle _drawline_ - 
+    gsave
+    rotate newpath moveto lineto setlinewidth setrgbcolor stroke
+    grestore } def
+
+% St Andrews
+/Andrews { % def
+    gsave
+    0 0 translate
+    White six FlagDiag 0 0 0 Angle31 drawline
+    grestore
+    gsave FlagWidth 0 translate
+    White six FlagDiag 0 0 0 180 Angle31 sub drawline
+    grestore
+
+} def 
+
+/Patricks  { % def
+    gsave
+    0 0 translate 
+    Red two FlagDiag2 one neg 0 one neg Angle31 drawline
+    grestore
+    gsave
+    FlagWidth 2 div FlagHeight 2 div translate
+    Red two FlagDiag2 one     0 one     Angle31 drawline
+    grestore
+    gsave
+    FlagWidth 0 translate
+    Red two FlagDiag2 one neg 0 one neg 180 Angle31 sub drawline
+    grestore
+    gsave
+    FlagWidth 2 div FlagHeight 2 div translate
+    Red two FlagDiag2 one    0 one     180 Angle31 sub drawline
+    grestore
+    
+} def
+
+/Georges { % def
+    gsave
+    % Horizontal line in the middle - white
+    0    FlagHeight 2 div   translate
+    White ten FlagWidth 0 0 0 0 drawline
+    grestore
+    gsave % 1
+    % vertical line in the middle - white
+    FlagWidth 2 div  0      translate
+    White ten FlagHeight 0 0 0 90 drawline
+    grestore % 1
+    gsave
+    % Horizontal line in the middle - Red
+    0    FlagHeight 2 div   translate
+    Red six  FlagWidth 0 0 0 0 drawline
+    grestore
+    gsave % 1
+    % vertical line in the middle - Red
+    FlagWidth 2 div  0      translate
+    Red six FlagHeight 0 0 0 90 drawline
+    grestore % 1
+} def
+
+Background
+Andrews
+Patricks
+Georges
+
+showpage
+
+
+grestore    
+% showpage 
+
+%%EndDocument
+
+%%Trailer
+%%EOF
