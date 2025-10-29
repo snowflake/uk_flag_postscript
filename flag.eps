@@ -5,8 +5,15 @@
 
 %%BeginDocument
 
+% scalefactor defaults to 8 if it is not defined.
+% It can be defined on the ghostscript command line with
+%  -dscalefactor=xxx
+% where xxx is the factor, eg 16
+(scalefactor) where { pop } { /scalefactor 8 def } ifelse
+
+
 % multiplier for all lengths
-/mulscale { 8 mul } def
+/mulscale { scalefactor mul } def
 
 % colours
 /Frac { 255.0 div } def
