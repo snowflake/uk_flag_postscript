@@ -1,9 +1,4 @@
-%!PS-Adobe-3.0 EPS-3.0
-%%BoundingBox: 0 0 400 240
-%%EndComments
-%%EndProlog
-
-%%BeginDocument
+%!PS-Adobe-1.0
 
 % scalefactor defaults to 8 if it is not defined.
 % It can be defined on the ghostscript command line with
@@ -37,8 +32,6 @@
 
 gsave
 0 0 FlagWidth FlagHeight rectclip
-
-
 
 % Fill with the backgound colour
 /Background {
@@ -109,18 +102,13 @@ gsave
     grestore % 1
 } def
 
+% Display flags for each saint
 Background
 Andrews
 Patricks
 Georges
 
+grestore
 showpage
 
-
-grestore    
-% showpage 
-
-%%EndDocument
-
-%%Trailer
-%%EOF
+% EOF
