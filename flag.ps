@@ -1,11 +1,22 @@
 %!PS-Adobe-1.0
 
+% Metadata for the PDF file.
+[ /Title (Union flag of the United Kingdom)
+  /Author (Dave Evans)
+  /Subject (Postscript to generate PNGs and PDFs)
+%  /Creator (JA's Metadata Inserter)
+%  /ModDate (D:19700101000000+01'00')
+%  /Producer (A 'pdfmark' trick with Ghostscript)
+  /Keywords (flag United Kingdom)
+  /CreationDate (D:20251027000000+00'00')
+  /DOCINFO
+pdfmark
+
 % scalefactor defaults to 8 if it is not defined.
 % It can be defined on the ghostscript command line with
 %  -dscalefactor=xxx
 % where xxx is the factor, eg 16
 (scalefactor) where { pop } { /scalefactor 8 def } ifelse
-
 
 % multiplier for all lengths
 /mulscale { scalefactor mul } def
